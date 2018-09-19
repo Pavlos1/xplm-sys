@@ -36,6 +36,7 @@ fn configure_bindings() -> bindgen::Builder {
         // Interpret all XPLM enum as constants
         // (like the headers)
         .constified_enum("*")
+        .derive_debug(false)
 }
 
 /// Returns true if a feature with a provided name is enabled in the current build.
