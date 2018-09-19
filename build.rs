@@ -117,6 +117,7 @@ impl SdkVersion {
             (false, false, false) => Ok(SdkVersion::Sdk100),
             (true, false, false) => Ok(SdkVersion::Sdk200),
             (false, true, false) => Ok(SdkVersion::Sdk210),
+            (true, true, false) => Ok(SdkVersion::Sdk210), // FIXME backwards compatibility
             (false, false, true) => Ok(SdkVersion::Sdk300),
             _ => Err(SdkVersionError::Feature("Only one of the xplm200, xplm210, or xplm300 features may be enabled"))
         }
